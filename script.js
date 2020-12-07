@@ -21,15 +21,18 @@ restcountries(restcountriesurl)
 function display(data){
 var container= createElement("div","container","cont1");
 var row=createElement("div","row","row1");
-var col=createElement("div","col-3","row")
 
 data.forEach(element => {
+    var col=createElement("div","col-3","row");
     var card=createcard(element);
     col.append(card);
+    row.append(col);
+   
 });
-row.append(col);
+
 container.append(row);
 document.body.append(container);
+
 }
 function createcard(countryObj) {
     const card = createElement("div", "card");
